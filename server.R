@@ -186,7 +186,28 @@
        
     })
    
-   
+  #row-------
+    output$plot <- renderEcharts4r({
+      tsdv::polar2D_echarts4r_base_bar(data = xs_info,category = 'course',value = 'score')
+    })
+    
+    output$char <- renderEcharts4r({
+      tsdv::polar2D_echarts4r_base_bar(data = xs_char,category = 'course',value = 'score')
+    })
+    
+    run_dataTable2('xs_schedule',data = iTLApkg::getSchedule())
+    
+    run_dataTable2('xs_task',data = iTLApkg::getTask())
+    
+    run_dataTable2('xs_course',data = iTLApkg::getCourse())
+    
+    var_xs_book <- var_ListChoose1('xs_book')
+    
+    observeEvent(input$xs_learning,{
+      courseName = var_xs_book()
+      run_dataTable2('xs_learing_dt',data = iTLApkg::getKM(courseName = courseName))
+      
+    })
    
    
   

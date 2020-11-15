@@ -1,9 +1,10 @@
+#共享平台
 menu_majority <- tabItem(tabName = "majority",
                          fluidRow(
                            column(width = 12,
-                                  tabBox(title ="majority工作台",width = 12,
+                                  tabBox(title ="共享平台",width = 12,
                                          id='tabSet_majority',height = '300px',
-                                         tabPanel('sheet1',tagList(
+                                         tabPanel('知识库',tagList(
                                            fluidRow(column(4,box(
                                              title = "操作区域", width = NULL, solidHeader = TRUE, status = "primary",
                                              'sheet1'
@@ -16,7 +17,7 @@ menu_majority <- tabItem(tabName = "majority",
                                            ))
                                            
                                          )),
-                                         tabPanel('sheet2',tagList(
+                                         tabPanel('知识图谱',tagList(
                                            fluidRow(column(4,box(
                                              title = "操作区域", width = NULL, solidHeader = TRUE, status = "primary",
                                              'sheet2'
@@ -29,7 +30,7 @@ menu_majority <- tabItem(tabName = "majority",
                                            
                                          )),
                                          
-                                         tabPanel('sheet3',tagList(
+                                         tabPanel('主管部门',tagList(
                                            fluidRow(column(4,box(
                                              title = "操作区域", width = NULL, solidHeader = TRUE, status = "primary",
                                              'sheet3'
@@ -41,7 +42,7 @@ menu_majority <- tabItem(tabName = "majority",
                                            ))
                                            
                                          )),
-                                         tabPanel('sheet4',tagList(
+                                         tabPanel('市政热线',tagList(
                                            fluidRow(column(4,box(
                                              title = "操作区域", width = NULL, solidHeader = TRUE, status = "primary",
                                              'sheet4'

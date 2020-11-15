@@ -1,9 +1,10 @@
+#家长平台
 menu_book <- tabItem(tabName = "book",
                      fluidRow(
                        column(width = 12,
-                              tabBox(title ="book工作台",width = 12,
+                              tabBox(title ="家长平台",width = 12,
                                      id='tabSet_book',height = '300px',
-                                     tabPanel('sheet1',tagList(
+                                     tabPanel('基本信息',tagList(
                                        fluidRow(column(4,box(
                                          title = "操作区域", width = NULL, solidHeader = TRUE, status = "primary",
                                          'sheet1'
@@ -16,7 +17,7 @@ menu_book <- tabItem(tabName = "book",
                                        ))
                                        
                                      )),
-                                     tabPanel('sheet2',tagList(
+                                     tabPanel('家长画像',tagList(
                                        fluidRow(column(4,box(
                                          title = "操作区域", width = NULL, solidHeader = TRUE, status = "primary",
                                          'sheet2'
@@ -29,19 +30,47 @@ menu_book <- tabItem(tabName = "book",
                                        
                                      )),
                                      
-                                     tabPanel('sheet3',tagList(
+                                    
+                                     tabPanel('学生简报',tagList(
                                        fluidRow(column(4,box(
                                          title = "操作区域", width = NULL, solidHeader = TRUE, status = "primary",
-                                         'sheet3'
+                                         'sheet4'
                                        )),
                                        column(8, box(
                                          title = "报表区域", width = NULL, solidHeader = TRUE, status = "primary",
-                                         'rpt3'
+                                         'rpt4'
+                                       )
+                                       ))
+                                       
+                                     ))
+                                     , 
+                                     tabPanel('教师简报',tagList(
+                                       fluidRow(column(4,box(
+                                         title = "操作区域", width = NULL, solidHeader = TRUE, status = "primary",
+                                         'sheet4'
+                                       )),
+                                       column(8, box(
+                                         title = "报表区域", width = NULL, solidHeader = TRUE, status = "primary",
+                                         'rpt4'
+                                       )
+                                       ))
+                                       
+                                     ))
+                                  
+                                     ,
+                                     tabPanel('投诉建议',tagList(
+                                       fluidRow(column(4,box(
+                                         title = "操作区域", width = NULL, solidHeader = TRUE, status = "primary",
+                                         'sheet4'
+                                       )),
+                                       column(8, box(
+                                         title = "报表区域", width = NULL, solidHeader = TRUE, status = "primary",
+                                         'rpt4'
                                        )
                                        ))
                                        
                                      )),
-                                     tabPanel('sheet4',tagList(
+                                     tabPanel('通知公告',tagList(
                                        fluidRow(column(4,box(
                                          title = "操作区域", width = NULL, solidHeader = TRUE, status = "primary",
                                          'sheet4'

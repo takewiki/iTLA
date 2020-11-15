@@ -17,6 +17,8 @@ library(shinyalert);
 library(rclipboard);
 library(DTedit);
 library(dashboardthemes);
+library(echarts4r)
+library(tsdv)
 
 source('00_data.R',encoding = 'utf-8');
 source('01_row_body.R',encoding = 'utf-8');
@@ -27,6 +29,11 @@ source('05_majority_body.R',encoding = 'utf-8');
 source('06_tutor_body.R',encoding = 'utf-8');
 source('99_sysSetting_body.R',encoding = 'utf-8');
 source('workAreaSetting.R',encoding = 'utf-8')
+
+
+
+xs_info <- data.frame(course=c('语文','数学','英语'),score=c(98,72,65))
+xs_char <- data.frame(course=c('德','智','体','美','劳'),score=c(5,5,3,4,2))
 
 
 
