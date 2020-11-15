@@ -30,6 +30,9 @@ shinyUI(dashboardPage(skin = "blue",
                     #ui.body----
                     dashboardBody(
                       shinyjs::useShinyjs(),
+                      shinyDashboardThemes(
+                        theme = "poor_mans_flatly"
+                      ),
                       use_pop(),
                       tags$head(tags$style(".table{margin: 0 auto;}"),
                                 tags$script(src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.16/iframeResizer.contentWindow.min.js",

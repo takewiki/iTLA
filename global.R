@@ -16,7 +16,7 @@ library(tsai);
 library(shinyalert);
 library(rclipboard);
 library(DTedit);
-
+library(dashboardthemes);
 
 source('00_data.R',encoding = 'utf-8');
 source('01_row_body.R',encoding = 'utf-8');
