@@ -32,8 +32,15 @@ source('workAreaSetting.R',encoding = 'utf-8')
 
 
 
-xs_info <- data.frame(course=c('语文','数学','英语'),score=c(98,72,65))
-xs_char <- data.frame(course=c('德','智','体','美','劳'),score=c(5,5,3,4,2))
+#xs_info <- data.frame(course=c('语文','数学','英语'),score=c(98,72,65))
+#xs_char <- data.frame(course=c('德','智','体','美','劳'),score=c(5,5,3,4,2))
+data1 <- iTLApkg::student_cap_info()
+data2 <- iTLApkg::student_cap_char()
+
+xs_stat <- iTLApkg::getStatKm()
+
+xs_ErrorList <- iTLApkg::getErrorList()
+
 
 
 

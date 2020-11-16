@@ -187,13 +187,25 @@
     })
    
   #row-------
-    output$plot <- renderEcharts4r({
-      tsdv::polar2D_echarts4r_base_bar(data = xs_info,category = 'course',value = 'score')
+    #生成用户画像
+    
+    observeEvent(input$xs_Cap_Gen,{
+      
+      output$plot <- renderEcharts4r({
+       
+        print(data1)
+        tsdv::polar2D_echarts4r_base_bar(data = data1 ,category = 'course',value = 'score')
+      })
+      
+      output$char <- renderEcharts4r({
+        
+        print(data2)
+        tsdv::polar2D_echarts4r_base_bar(data = data2 ,category = 'course',value = 'score')
+      })
+      
     })
     
-    output$char <- renderEcharts4r({
-      tsdv::polar2D_echarts4r_base_bar(data = xs_char,category = 'course',value = 'score')
-    })
+ 
     
     run_dataTable2('xs_schedule',data = iTLApkg::getSchedule())
     
@@ -208,6 +220,46 @@
       run_dataTable2('xs_learing_dt',data = iTLApkg::getKM(courseName = courseName))
       
     })
+    
+    #
+    var_xs_exercise <- var_ListChoose1('xs_exercise')
+    
+    observeEvent(input$xs_exercise_btn,{
+      courseName = var_xs_exercise()
+      run_dataTable2('xs_exercise_dt',data = iTLApkg::getExercise(courseName = courseName))
+      
+    })
+    
+    
+    var_xs_exam <- var_ListChoose1('xs_exam')
+    
+    observeEvent(input$xs_exam_btn,{
+      courseName = var_xs_exam()
+      run_dataTable2('xs_exam_dt',data = iTLApkg::getExam(courseName = courseName))
+      
+    })
+    
+    var_xs_status <- var_ListChoose1('xs_status')
+    
+    observeEvent(input$xs_status_btn,{
+      courseName = var_xs_status()
+      run_dataTable2('xs_status_knowledge',data = iTLApkg::getKnowledgeStatus(courseName = courseName))
+      run_dataTable2('xs_status_exercise',data = iTLApkg::getExerciseStatus(courseName = courseName))
+      run_dataTable2('xs_status_exam',data = iTLApkg::getExamStatus(courseName = courseName))
+      
+    })
+    
+    observeEvent(input$xs_analysis_btn,{
+      output$xs_stat <- renderEcharts4r({
+        
+        tsdv::polar2D_echarts4r_base_bar(data = xs_stat,category = 'FSectionContent',value = 'FStatInfo')
+      })
+      
+      run_dataTable2('xs_ErrorList',data = xs_ErrorList)
+      
+    })
+    
+  
    
    
   
